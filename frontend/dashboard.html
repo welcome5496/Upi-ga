@@ -1,1 +1,18 @@
+<h2>Merchant Dashboard</h2>
+<p>Your API Key: <span id="apiKey"></span></p>
+
+<script>
+    let token = localStorage.getItem("token");
+    if (!token) {
+        window.location.href = "index.html";
+    }
+
+    fetch("/api/getApiKey", {
+        headers: { "Authorization": "Bearer " + token }
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("apiKey").innerText = data.apiKey;
+    });
+</script>
 
