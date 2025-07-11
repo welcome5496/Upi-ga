@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Speed Tracker</title>
+  <style>
+    body {
+      background: black;
+      color: lime;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 60px;
+    }
+    h1 { font-size: 2rem; }
+    p { font-size: 1.4rem; }
+  </style>
+</head>
+<body>
+  <h1>🚴 Speed Tracker</h1>
+  <p id="speed">Speed: 0 km/h</p>
+  <p id="distance">Distance: 0.00 km</p>
+  <p id="average">Average: 0.0 km/h</p>
+
+  <script>
+    let prev = null;
+    let total = 0;
+    let startTime = Date.now();
+
+    function deg2rad(deg) {
+      return deg * Math.PI / 180;
+    }
+
+    function getDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371000;
+      cons
